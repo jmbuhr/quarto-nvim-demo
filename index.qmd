@@ -9,13 +9,11 @@ bibliography: references.bib
 # Vim basics
 
 - `:Tutor`
-
 - Modes
   - Normal
   - Insert
   - Visual
   - Command
-
 - Motions / Text objects
 - Operators
 - (Count)
@@ -125,19 +123,33 @@ import matplotlib.pyplot as plt
 from plotnine import * # pyright: ignore
 from palmerpenguins import load_penguins
 
-plt.ion()
+plt.ion();
 
 penguins: DataFrame = load_penguins() # type: ignore
 penguins.columns
 ```
 
+```{python}
+m = np.mean(penguins['bill_length_mm'])
+```
 
 ```{python}
+#| warning: false
 p = (
   ggplot(penguins, aes('bill_length_mm', 'flipper_length_mm',))
   + geom_point()
+  + geom_vline(xintercept=m, color='red')
 )
 p.show()
+```
+
+## Lua
+
+```lua
+local f = function ()
+  return "Hello world"
+end
+print(f())
 ```
 
 # Links

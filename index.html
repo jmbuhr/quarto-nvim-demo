@@ -120,17 +120,17 @@ div.csl-indent {
 <section id="vim-basics" class="level1">
 <h1>Vim basics</h1>
 <ul>
-<li><p><code>:Tutor</code></p></li>
-<li><p>Modes</p>
+<li><code>:Tutor</code></li>
+<li>Modes
 <ul>
 <li>Normal</li>
 <li>Insert</li>
 <li>Visual</li>
 <li>Command</li>
 </ul></li>
-<li><p>Motions / Text objects</p></li>
-<li><p>Operators</p></li>
-<li><p>(Count)</p></li>
+<li>Motions / Text objects</li>
+<li>Operators</li>
+<li>(Count)</li>
 </ul>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
@@ -223,12 +223,10 @@ s/old/new/g - substitute old with new (globally on each line)</code></pre>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span> <span class="co"># pyright: ignore</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.ion()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;contextlib.ExitStack object at 0x71075bcb4460&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>penguins: DataFrame <span class="op">=</span> load_penguins() <span class="co"># type: ignore</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>penguins.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.ion()<span class="op">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>penguins: DataFrame <span class="op">=</span> load_penguins() <span class="co"># type: ignore</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>penguins.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Index(['species', 'island', 'bill_length_mm', 'bill_depth_mm',
        'flipper_length_mm', 'body_mass_g', 'sex', 'year'],
@@ -236,14 +234,11 @@ s/old/new/g - substitute old with new (globally on each line)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  ggplot(penguins, aes(<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>,))</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">+</span> geom_point()</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>p.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>/home/jannik/teaching/quarto-nvim-demo/.venv/lib/python3.10/site-packages/plotnine/layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  ggplot(penguins, aes(<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>,))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">+</span> geom_point()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>p.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -256,6 +251,7 @@ s/old/new/g - substitute old with new (globally on each line)</code></pre>
 </section>
 <section id="links" class="level1">
 <h1>Links</h1>
+<p>https://github.com/jmbuhr/quarto-nvim-demo</p>
 <p>https://github.com/quarto-dev/quarto-nvim https://github.com/jmbuhr/otter.nvim https://github.com/jmbuhr/quarto-nvim-kickstarter/ https://github.com/nvim-lua/kickstart.nvim https://github.com/nvim-telescope/telescope.nvim https://github.com/jmbuhr/telescope-zotero.nvim</p>
 <p>https://jmbuhr.de/2023-workflow https://jmbuhr.de/</p>
 <p>https://github.com/tmux/tmux/ https://sw.kovidgoyal.net/kitty/</p>
