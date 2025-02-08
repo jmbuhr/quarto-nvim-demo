@@ -1,0 +1,157 @@
+---
+title: Bringing Quarto to Neovim with the help of Otters 🦦
+format:
+  html: default
+  revealjs: default
+bibliography: references.bib
+---
+
+# Vim basics
+
+- `:Tutor`
+
+- Modes
+  - Normal
+  - Insert
+  - Visual
+  - Command
+
+- Motions / Text objects
+- Operators
+- (Count)
+
+## Examples
+
+```
+ciw  - change inner word
+```
+
+```
+.    - repeat last change
+```
+
+```
+z?   - activate spell checking
+]s   - move to next misspelled word
+z=   - get suggestions
+zg   - add (good) word to dictionary
+]s  
+```
+
+Hello wrld
+
+```
+yiw  - yank (copy) inner word
+```
+
+Side note: VIM motions are everywhere (with plugins).
+
+```
+/    - search
+<cr> - accept search
+das  - delete a sentence
+F.   - go to the previous period
+p    - paste
+```
+
+```
+vip  - visually select inner paragraph
+:    - command mode
+s/old/new/g - substitute old with new (globally on each line)
+```
+
+# Example Text about Otters
+
+![](img/otter.png)
+
+From <https://en.wikipedia.org/wiki/Otter>
+
+Otters are carnivorous mammals in the subfamily Lutrinae. The 13 extant otter species are all semiaquatic, aquatic, or marine, with diets based on fish and invertebrates. Lutrinae is a branch of the Mustelidae family, which also includes weasels, badgers, mink, and wolverines, among other animals.
+
+## Etymology
+
+The word otter derives from the Old English word otor or oter. This and cognate words in other Indo-European languages ultimately stem from the Proto-Indo-European root *wódr̥, which also gave rise to the English word "water".
+
+## Terminology
+
+An otter's den is called a holt, or couch
+The collective nouns for otters are bevy, family, lodge, romp (being descriptive of their often playful nature), or, when in water, raft
+Male otters are called dogs or boars; females are called bitches or sows; and their offspring are called pups or cubs.
+
+# Code Examples
+
+![](img/penguins.png)
+
+@R-palmerpenguins
+
+## R
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#' @title hello
+#' @description A simple function to greet someone
+#' @param name A character string with the name of the person to greet
+greet <- function(name) {
+  text <- paste0("Hello ", name)
+  return(text)
+}
+```
+
+```{r}
+greet("world")
+```
+
+
+```{r}
+ggplot(penguins,
+  aes(
+    x = bill_length_mm,
+    y = flipper_length_mm
+  )
+) + geom_point()
+```
+
+## Python
+
+```{python}
+import numpy as np
+import pandas as pd
+from pandas import DataFrame
+import matplotlib.pyplot as plt
+from plotnine import * # pyright: ignore
+from palmerpenguins import load_penguins
+
+plt.ion()
+
+penguins: DataFrame = load_penguins() # type: ignore
+penguins.columns
+```
+
+
+```{python}
+p = (
+  ggplot(penguins, aes('bill_length_mm', 'flipper_length_mm',))
+  + geom_point()
+)
+p.show()
+```
+
+# Links
+
+https://github.com/quarto-dev/quarto-nvim
+https://github.com/jmbuhr/otter.nvim
+https://github.com/jmbuhr/quarto-nvim-kickstarter/
+https://github.com/nvim-lua/kickstart.nvim
+https://github.com/nvim-telescope/telescope.nvim
+https://github.com/jmbuhr/telescope-zotero.nvim
+
+https://jmbuhr.de/2023-workflow
+https://jmbuhr.de/
+
+https://github.com/tmux/tmux/
+https://sw.kovidgoyal.net/kitty/
+

@@ -1,0 +1,9 @@
+numpy
+plotnine
+matplotlib
+jupyter
+pynvim
+jupyter_client
+plotly
+kaleido
+pillow
