@@ -142,6 +142,8 @@ p.show()
 
 # Links
 
+https://github.com/jmbuhr/quarto-nvim-demo
+
 https://github.com/quarto-dev/quarto-nvim
 https://github.com/jmbuhr/otter.nvim
 https://github.com/jmbuhr/quarto-nvim-kickstarter/
